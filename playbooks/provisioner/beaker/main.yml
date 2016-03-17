@@ -13,7 +13,7 @@
         ansible_fqdn="{{ provisioner.hosts.host0.fqdn }}"
         ansible_ssh_host="{{ provisioner.hosts.host0.fqdn }}"
         ansible_ssh_user="{{ provisioner.hosts.host0.remote_user }}"
-        ansible_ssh_pass="{{ provisioner.hosts.host0.remote_pass }}"
+        ansible_ssh_password="{{ provisioner.hosts.host0.remote_pass }}"
 
 - name: Use beaker to provision the machine
   hosts: localhost
