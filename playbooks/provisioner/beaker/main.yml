@@ -26,3 +26,12 @@
           password: "{{ provisioner.hosts.host0.remote_pass }}"
           action: "{{ provisioner.hosts.host0.action }}"
           distro_tree_id: "{{ provisioner.hosts.host0.distro_tree_id }}"
+
+    - name: wait for ssh
+      wait_for:
+          host: "{{ provisioner.hosts.host0.fqdn }}"
+          port: 22
+          search_regex: OpenSSH
+          timeout: 300
+          delay: 600
+          connect_timeout: 30
